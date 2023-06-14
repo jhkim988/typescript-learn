@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var message = "Hello World!";
 console.log(message.toLocaleLowerCase());
 // 컴파일러 tsc(타입스크립트 컴파일러)
@@ -18,3 +16,11 @@ function greetWithType(person, date) {
 }
 greetWithType("Maddison", new Date());
 var msg = "hello there!"; // 타입 추론, let msg: string
+// msg = [123]; // 에러
+// 타입 검사 엄격도
+// 1. cli 에서 --strict 옵션
+// 2. tsconfig.json 에 "strict": true 옵션
+// noImplicitAny
+// any 로 추론되는 변수에 대해 오류를 발생시킨다.
+// strictNullChecks
+// null, undefined 를 명시적으로 처리한다.

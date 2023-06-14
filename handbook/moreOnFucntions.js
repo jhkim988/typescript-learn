@@ -222,14 +222,19 @@ function sum(_a) {
     console.log(a + b + c);
 }
 var f5 = function () {
-    return "f5";
+    return true;
 };
-var f6 = function () { return "f6"; };
+var f6 = function () { return true; };
 var f7 = function () {
-    return "f7";
+    return true;
 };
 // void 타입
 var v1 = f5();
 var v2 = f6();
 var v3 = f7();
-console.log(v1, v2, v3);
+console.log(v1, v2, v3); // 출력은 리턴값(true) 가 나오는 것을 확인할 수 있다.
+//// @ts-expect-error 를 사용해서 voidFunc 없이 void 리턴 타입에서 다른 값을 리턴할 수 있다.
+function f8() {
+    // @ts-expect-error
+    return true;
+}
